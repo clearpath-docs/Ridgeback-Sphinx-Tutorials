@@ -31,7 +31,7 @@ To get all Navigation related files for Ridgeback, run:
 
 .. code-block:: bash
 
-    sudo apt-get install ros-indigo-ridgeback-navigation
+    sudo apt-get install ros-kinetic-ridgeback-navigation
 
 To launch the navigation demo, run:
 
@@ -124,4 +124,3 @@ may be a good fit for your team. Please `get in touch for more details`__.
 
 .. _contact: http://www.clearpathrobotics.com/contact/
 __ contact_
-

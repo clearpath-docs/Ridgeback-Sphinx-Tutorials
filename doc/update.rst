@@ -31,7 +31,7 @@ is the case in one of two ways:
 1. The firmware and PC are unable to connect to each other, which will be apparent if the two-arrow comms indicator
    fails to come on after system bootup.
 2. If the firmware version number in the ``/status`` message does not match the package version output by
-   ``dpkg -s ros-indigo-ridgeback-firmware``. In the future there will be an automated check for this which outputs
+   ``dpkg -s ros-kinetic-ridgeback-firmware``. In the future there will be an automated check for this which outputs
    a diagnostics warning when a firmware update is available to be applied.
 
 If new firmware is available, follow the below procedure to flash it to Ridgeback's MCU:
@@ -67,7 +67,7 @@ If Ridgeback's computer has become inoperable, or for any reason you want to res
 by opening Ridgeback, lowering the computer tray, and connecting a screen and keyboard, as well as a wired internet
 connection. You can then download the most recent version of the Ridgeback boot ISO from the following location:
 
-http://packages.clearpathrobotics.com/stable/images/latest/indigo-ridgeback/amd64/
+http://packages.clearpathrobotics.com/stable/images/latest/kinetic-ridgeback/amd64/
 
 Use unetbootin or a similar tool to flash the ISO image to a USB memory stick. Boot Ridgeback's computer with the USB
 memory connected, and you should be in the purple Debian/Ubuntu installer. The installer runs by itself and shuts
@@ -113,10 +113,10 @@ respond to your commands, power-cycle the full system and you should be set.
 
       - If you have sixad installed then it needs to be removed using ``sudo apt-get purge sixad``
 
-2. Charge the controller for a while, the controllers sometimes have issues pairing when the battery is low. 
-3. Unpair the controller using ``sudo bluez-test-device remove XX:XX:XX:XX:XX:XX`` (You can get this by putting the controller into to pairing mode and running hcitool scan). 
-4. Ensure that Bluetooth is enabled in Connman with ``connmanctl enable bluetooth``. 
-5. Check to make sure Bluetooth is enabled by running ``sudo service bluetooth status``. 
-6. If bluetooth is not enabled start the Bluetooth daemon with ``sudo service bluetooth start`` and make sure the bluetoothd is executable with ``ls -la /usr/sbin/bluetoothd``. If not make it executable using ``sudo chmod +x /usr/sbin/bluetoothd`` but this a temporary solution, you should update your packages to fix this. 
-7. Power cycle the controller before trying to pair it. 
-8. Finally, press the PS and share button simultaneously so the controller Bluetooth is enabled for pairing and use ``sudo ds4drv-pair``. 
+2. Charge the controller for a while, the controllers sometimes have issues pairing when the battery is low.
+3. Unpair the controller using ``sudo bluez-test-device remove XX:XX:XX:XX:XX:XX`` (You can get this by putting the controller into to pairing mode and running hcitool scan).
+4. Ensure that Bluetooth is enabled in Connman with ``connmanctl enable bluetooth``.
+5. Check to make sure Bluetooth is enabled by running ``sudo service bluetooth status``.
+6. If bluetooth is not enabled start the Bluetooth daemon with ``sudo service bluetooth start`` and make sure the bluetoothd is executable with ``ls -la /usr/sbin/bluetoothd``. If not make it executable using ``sudo chmod +x /usr/sbin/bluetoothd`` but this a temporary solution, you should update your packages to fix this.
+7. Power cycle the controller before trying to pair it.
+8. Finally, press the PS and share button simultaneously so the controller Bluetooth is enabled for pairing and use ``sudo ds4drv-pair``.
