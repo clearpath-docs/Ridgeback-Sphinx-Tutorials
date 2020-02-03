@@ -1,5 +1,5 @@
 Keeping Ridgeback Updated
-======================
+===========================
 
 Ridgeback is always being improved, both its own software and the many community ROS packages upon which it
 depends! You can use the apt package management system to receive new versions all software running on the
