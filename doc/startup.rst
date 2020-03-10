@@ -44,7 +44,7 @@ launch files associated with the ``ros`` background job. If you add launch files
 Ridgeback's startup.
 
 However, it's important to note that in the default configuration, any launch files you add may only reference ROS
-software installed in ``/opt/ros/kinetic/``. If you want to launch something from workspace in
+software installed in ``/opt/ros/melodic/``. If you want to launch something from workspace in
 the home directory, you must change ``/etc/ros/setup.bash`` to source that workspace's setup file rather than the
 one from ``opt``.
 

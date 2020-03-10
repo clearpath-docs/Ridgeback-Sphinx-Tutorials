@@ -31,7 +31,7 @@ is the case in one of two ways:
 1. The firmware and PC are unable to connect to each other, which will be apparent if the two-arrow comms indicator
    fails to come on after system bootup.
 2. If the firmware version number in the ``/status`` message does not match the package version output by
-   ``dpkg -s ros-kinetic-ridgeback-firmware``. In the future there will be an automated check for this which outputs
+   ``dpkg -s ros-melodic-ridgeback-firmware``. In the future there will be an automated check for this which outputs
    a diagnostics warning when a firmware update is available to be applied.
 
 If new firmware is available, follow the below procedure to flash it to Ridgeback's MCU:
@@ -67,7 +67,7 @@ If Ridgeback's computer has become inoperable, or for any reason you want to res
 by opening Ridgeback, lowering the computer tray, and connecting a screen and keyboard, as well as a wired internet
 connection. You can then download the most recent version of the Ridgeback boot ISO from the following location:
 
-http://packages.clearpathrobotics.com/stable/images/latest/kinetic-ridgeback/amd64/
+http://packages.clearpathrobotics.com/stable/images/latest/melodic-ridgeback/amd64/
 
 Use unetbootin or a similar tool to flash the ISO image to a USB memory stick. Boot Ridgeback's computer with the USB
 memory connected, and you should be in the purple Debian/Ubuntu installer. The installer runs by itself and shuts
