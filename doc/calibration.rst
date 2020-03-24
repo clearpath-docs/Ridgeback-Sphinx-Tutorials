@@ -1,5 +1,5 @@
 Calibrating Ridgeback's IMU
-========================
+==================================
 
 This tutorial explains how Ridgeback's compass works and how to calibrate it for top performance.
 
@@ -8,7 +8,7 @@ perform this operation on a seasonal basis.
 
 
 Understanding Compass Calibration
----------------------------------
+-------------------------------------
 
 Ridgeback includes integrated `inertial measurement`_, which allows it to estimate its own orientation in space.
 
@@ -27,7 +27,7 @@ fields onboard Ridgeback from the battery, motors, sheet metal parts, etc, can b
 
 
 Running Ridgeback's Calibration
-----------------------------
+--------------------------------------
 
 To run the calibration routine, connect to Ridgeback by SSH, and execute:
 
