@@ -1,5 +1,5 @@
 Simulating Ridgeback
-=================
+====================
 
 Whether you actually have a Ridgeback robot or not, the Ridgeback simulator is a great way to get started with ROS
 robot development. In this tutorial, we will go through the basics of starting Gazebo and Rviz and how to drive
@@ -66,7 +66,7 @@ robot doesn't yet know about the barriers which exist in its Gazebo world, they'
 
 
 Driving Ridgeback
---------------
+-----------------
 
 What is shown, however, is Ridgeback's interactive markers. These are the simplest way to command your robot
 to move around. If you don't see them in your rviz display, select the Interact tool from the top toolbar.

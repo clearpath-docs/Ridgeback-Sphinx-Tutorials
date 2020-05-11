@@ -1,5 +1,5 @@
 Configuration & Environment Variables
-=========================================
+=====================================
 
 .. image:: urdf-banner.png
     :alt: Warthog URDF
@@ -10,7 +10,7 @@ The ridgeback_description package is the URDF robot description for Ridgeback UG
 
 
 Overview
----------
+--------
 
 This package provides a `URDF <http://wiki.ros.org/urdf>`_ model of Ridgeback.  For an example launchfile to use in visualizing this model, see `ridgeback_viz <http://wiki.ros.org/ridgeback_viz>`_.
 

@@ -1,5 +1,5 @@
 Setting Up Ridgeback's Network
-===========================
+==============================
 
 
 First Connection
@@ -18,7 +18,7 @@ The default password is ``clearpath``. You should now be logged into Ridgeback a
 
 
 Connecting to Wifi Access Point
---------------------------------
+-------------------------------
 
 Once connected via wire, execute connmanctl to enter the command line interface for Connman, from which you can configure Ridgeback to either join an existing network, or supply its own standalone access point. An example session to connect to an existing network:
 
@@ -27,7 +27,7 @@ Once connected via wire, execute connmanctl to enter the command line interface 
 | connmanctl > services
 | connmanctl > agent on
 | connmanctl > connect wifi_123456_123456789123456789_managed_psk
-| 
+|
 
 After the connect line, connman will prompt you for your network's passphrase. Once connected, connman will remember and attempt to reconnect on successive power-ons.
 
@@ -67,7 +67,7 @@ those two key environment variables in the present context.
 
     source remote-ridgeback.sh
 
-Now, when you run commands like ``rostopic list``, ``rostopic echo``, ``rosnode list``, and others, the output 
+Now, when you run commands like ``rostopic list``, ``rostopic echo``, ``rosnode list``, and others, the output
 you see should reflect the activity on Ridgeback's ROS master, rather than on your own machine. Once you've
 verified the basics (list, echo) from the prompt, try launching some of the standard visual ROS tools:
 
@@ -84,5 +84,3 @@ run:
 .. code-block:: bash
 
     rqt
-
-
