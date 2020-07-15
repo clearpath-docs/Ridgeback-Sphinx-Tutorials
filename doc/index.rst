@@ -1,5 +1,5 @@
 Ridgeback Tutorials
-================
+===================
 
 This package supplies Sphinx-based tutorial content to assist you with setting up and operating your Ridgeback_
 mobile robot. The tutorials topics are listed in the left column, and presented in the suggested reading order.

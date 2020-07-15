@@ -1,5 +1,5 @@
 Extending Ridgeback's Startup
-==========================
+=============================
 
 Now that's you've had Ridgeback for a while, you may be interested in how to extend it— perhaps add some more payloads,
 or augment the URDF.

@@ -1,5 +1,5 @@
 Navigating with Ridgeback
-======================
+=========================
 
 Below are the example launch files for three different configurations for navigating Ridgeback:
 
