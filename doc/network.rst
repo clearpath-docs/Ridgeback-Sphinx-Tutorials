@@ -17,6 +17,30 @@ static IP:
 The default password is ``clearpath``. You should now be logged into Ridgeback as the administrator user.
 
 
+Changing the Default Password
+-----------------------------
+
+.. Note::
+
+  All Clearpath robots ship from the factory with their login password set to ``clearpath``.  Upon receipt of your
+  robot we recommend changing the password.
+
+To change the password to log into your robot, run the
+
+.. code-block:: bash
+
+  passwd
+
+command.  This will prompt you to enter the current password, followed by the new password twice.  While typing the
+passwords in the ``passwd`` prompt there will be no visual feedback (e.g. "*" characters).
+
+To further restrict access to your robot you can reconfigure the robot's SSH service to disallow logging in with a
+password and require SSH certificates to log in.  This_ tutorial covers how to configure SSH to disable password-based
+login.
+
+.. _This: https://linuxize.com/post/how-to-setup-passwordless-ssh-login/
+
+
 Connecting to Wifi Access Point
 -------------------------------
 

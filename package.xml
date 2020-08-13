@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package>
-  <name>jackal_tutorials</name>
-  <version>0.5.1</version>
-  <description>Jackal's tutorials.</description>
-  <maintainer email="mpurvis@clearpathrobotics.com">Mike Purvis</maintainer>
+  <name>ridgeback_tutorials</name>
+  <version>0.5.2</version>
+  <description>Ridgeback's tutorials.</description>
+  <maintainer email="civerachb@clearpathrobotics.com">Chris Iverach-Brereton</maintainer>
 
   <license>BSD</license>
 
-  <url type="website">http://wiki.ros.org/jackal_msgs</url>
+  <url type="website">https://clearpathrobotics.com/ridgeback-indoor-robot-platform/</url>
   <author email="mpurvis@clearpathrobotics.com">Mike Purvis</author>
 
   <buildtool_depend>catkin</buildtool_depend>
