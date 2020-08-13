@@ -1,7 +1,7 @@
 Configuration & Environment Variables
 =====================================
 
-.. image:: urdf-banner.png
+.. image:: images/urdf-banner.png
     :alt: Warthog URDF
 
 The ridgeback_description package is the URDF robot description for Ridgeback UGV.

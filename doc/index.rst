@@ -23,7 +23,7 @@ The remainder of the subjects are more applicable to the real robot, and have to
 and maintaining the platform. If you are a lab administrator rather than direct platform user, you may wish to
 skip the introductory chapters and jump straight to these ones.
 
-.. image:: ridgeback_banner.png
+.. image:: images/ridgeback_banner.png
     :alt: Ridgeback Robot
 
 .. toctree::
@@ -38,3 +38,4 @@ skip the introductory chapters and jump straight to these ones.
     calibration
     update
     package
+    additional_sim_worlds
