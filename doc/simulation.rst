@@ -14,7 +14,7 @@ set up on your Ubuntu desktop, and install the Ridgeback-specific metapackages f
 
 .. parsed-literal::
 
-    sudo apt-get install ros-|ros_distro|-ridgeback-simulator ros-|ros_distro|-ridgeback-desktop
+    sudo apt-get install ros-melodic-ridgeback-simulator ros-melodic-ridgeback-desktop
 
 
 Launch Gazebo
