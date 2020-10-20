@@ -115,8 +115,7 @@ respond to your commands, power-cycle the full system and you should be set.
 
 2. Charge the controller for a while, the controllers sometimes have issues pairing when the battery is low.
 3. Unpair the controller using ``sudo bluez-test-device remove XX:XX:XX:XX:XX:XX`` (You can get this by putting the controller into to pairing mode and running hcitool scan).
-4. Ensure that Bluetooth is enabled in Connman with ``connmanctl enable bluetooth``.
-5. Check to make sure Bluetooth is enabled by running ``sudo service bluetooth status``.
-6. If bluetooth is not enabled start the Bluetooth daemon with ``sudo service bluetooth start`` and make sure the bluetoothd is executable with ``ls -la /usr/sbin/bluetoothd``. If not make it executable using ``sudo chmod +x /usr/sbin/bluetoothd`` but this a temporary solution, you should update your packages to fix this.
-7. Power cycle the controller before trying to pair it.
-8. Finally, press the PS and share button simultaneously so the controller Bluetooth is enabled for pairing and use ``sudo ds4drv-pair``.
+4. Check to make sure Bluetooth is enabled by running ``sudo service bluetooth status``.
+5. If bluetooth is not enabled start the Bluetooth daemon with ``sudo service bluetooth start`` and make sure the bluetoothd is executable with ``ls -la /usr/sbin/bluetoothd``. If not make it executable using ``sudo chmod +x /usr/sbin/bluetoothd`` but this a temporary solution, you should update your packages to fix this.
+6. Power cycle the controller before trying to pair it.
+7. Finally, press the PS and share button simultaneously so the controller Bluetooth is enabled for pairing and use ``sudo ds4drv-pair``.
