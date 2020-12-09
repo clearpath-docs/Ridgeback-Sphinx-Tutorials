@@ -89,19 +89,13 @@ as appropriate and then launch the teleop node by running:
   roslaunch ridgeback_control teleop.launch joy_dev:=/dev/input/js0
 
 Replace ``/dev/input/js0`` with the joy device you wish to use as input.  By default ``ridgeback_control`` accepts input
-from ``/dev/input/ps4`` unless another device is specified.  If you use a PS4 controller, you can add the following udev
-rule to automatically symlink your js* device to ``/dev/input/ps4``:
+from ``/dev/input/ds4x`` unless another device is specified.  If you use a PS4 controller, you can install the
+``python-ds4drv`` package through apt to install the appropriate udev rules to map your PS4 controller's ``js*`` device
+to ``/dev/input/ds4x``:
 
 .. code-block:: bash
 
-  KERNEL=="js*", SUBSYSTEM=="input", ATTRS{name}=="Wireless Controller", MODE="0666", SYMLINK+="input/ps4"
-
-Put the above in ``/etc/udev/rules.d/41-playstation.rules`` and then run
-
-.. code-block:: bash
-
-  sudo udevadm control --reload-rules
-  sudo udevadm trigger
+  sudo apt-get install python-ds4drv
 
 If you use a different game controller, e.g. an Xbox controller or Logitech F710 you will need to specify the device
 using the ``joy_dev:=/dev/input/js*`` argument, described earlier.
