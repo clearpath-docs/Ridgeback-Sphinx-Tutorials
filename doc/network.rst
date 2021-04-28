@@ -44,16 +44,26 @@ login.
 Connecting to Wifi Access Point
 -------------------------------
 
-Once connected via wire, execute connmanctl to enter the command line interface for Connman, from which you can configure Ridgeback to either join an existing network, or supply its own standalone access point. An example session to connect to an existing network:
+Ridgeback's standard wireless network manager is wicd_. To connect to an access point in your lab, run:
 
-| connmanctl > enable wifi
-| connmanctl > scan wifi
-| connmanctl > services
-| connmanctl > agent on
-| connmanctl > connect wifi_123456_123456789123456789_managed_psk
-|
+.. code-block:: bash
 
-After the connect line, connman will prompt you for your network's passphrase. Once connected, connman will remember and attempt to reconnect on successive power-ons.
+    wicd-curses
+
+You should see a browsable list of networks which the robot has detected. Use arrow keys to select the one you
+would like to connect to, and then press the right arrow to configure it. You can enter your network's password
+near the bottom of the page, and note that you must select the correct encryption scheme; most modern networks
+use ``WPA1/2 Passphrase``, so if that's you, make sure that option is selected. You also likely want to select
+the option to automatically reconnect to this network, so that Ridgeback will be there for you on your wireless
+automatically in the future.
+
+When you're finished, press F10 to save, and then C to connect.
+
+Wicd will tell you in the footer what IP address it was given by your lab's access point, so you can now log out,
+remove the network cable, and reconnect over wireless. When you've confirmed that all this is working as expected,
+close up Ridgeback's chassis.
+
+.. _wicd: https://launchpad.net/wicd
 
 
 .. _remote:
