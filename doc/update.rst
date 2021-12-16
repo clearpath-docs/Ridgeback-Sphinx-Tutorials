@@ -41,10 +41,22 @@ If new firmware is available, follow the below procedure to flash it to Ridgebac
 1. Place Ridgeback up on blocks. Firmware loading does not usually result in unintended motion, but it's safest when
    off the ground.
 2. Ensure that Ridgeback is on and open.
-3. In the top-middle of the main circuit board, look for a small left-right switch in between two buttons.
-4. By default it is in the left position, but move it now to the right position.
-5. Press the reset button to the left, labeled ``M_RST``. Ridgeback is now in its bootloader, ready to receive new
-   firmware.
+3. Connect the MCU to the Ridgeback's PC using a mini-USB cable connected to the port shown below:
+
+.. image:: images/mcu_usb.png
+    :alt: Ridgeback MCU mini-USB port
+
+4. In the middle of the MCU is a two-position switch labelled ``PWR MODE``.  Move the switch from the default ``NORM``
+   position to the ``AUX`` position.
+5. Press the ``M_RST`` button.  The MCU is now in boot-loader mode, ready to receive new firmware
+
+.. image:: images/mcu_buttons.png
+    :alt: Ridgeback MCU mode switch and reset button
+
+.. note::
+
+    The Ridgeback's MCU is normally rotated 90 degrees when it is installed in the robot; the ``NORM`` position is
+    typically towards the top of the robot's chassisand the ``AUX`` position is normally towards the bottom.
 
 Now, from Ridgeback's PC (connected via SSH or screen/keyboard), execute:
 
@@ -52,12 +64,24 @@ Now, from Ridgeback's PC (connected via SSH or screen/keyboard), execute:
 
     rosrun ridgeback_firmware upload
 
-You should see about 20 seconds worth of lines output beginning with "Download from image ...". When this is
-complete, move the switch back to the leftmost position and quickly push the reset button again. You're now
-running the updated firmware!
+You should see about 20 seconds worth of lines output beginning with "Download from image ...".
 
-If you're too slow on pushing the reset button, Ridgeback will power off, including the internal PC. It's okay
-if that happens; just press the external power button again, and you should be back in business.
+When the upload is complete, move the ``PWR MODE`` switch back to the ``NORM`` position and immediately press the
+``M_RST`` button.
+
+.. note::
+
+    You must press the ``M_RST`` button immediately after changing the mode back to ``NORM``.  If you take too long
+    the Ridgeback may power off.  If this happens, simply ensure the switch is in the ``NORM`` position and power
+    the robot back on normally.  Losing power in this situation is inconvenient, but not harmful.
+
+After resetting the MCU back in ``NORM`` mode, ensure the MCU is using the new version of the firmware by running
+
+.. code-block:: bash
+
+    rostopic echo /status
+
+and verifying that the MCU firmware version is correct.
 
 
 .. _scratch:
