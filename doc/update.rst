@@ -56,7 +56,7 @@ If new firmware is available, follow the below procedure to flash it to Ridgebac
 .. note::
 
     The Ridgeback's MCU is normally rotated 90 degrees when it is installed in the robot; the ``NORM`` position is
-    typically towards the top of the robot's chassisand the ``AUX`` position is normally towards the bottom.
+    typically towards the top of the robot's chassis and the ``AUX`` position is normally towards the bottom.
 
 Now, from Ridgeback's PC (connected via SSH or screen/keyboard), execute:
 
