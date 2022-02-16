@@ -1,41 +1,80 @@
 Ridgeback Tutorials
 ===================
 
-This package supplies Sphinx-based tutorial content to assist you with setting up and operating your Ridgeback_
-mobile robot. The tutorials topics are listed in the left column, and presented in the suggested reading order.
+.. image:: images/ridgeback_banner.png
+    :alt: Ridgeback Robot
 
-.. _Ridgeback: http://www.clearpathrobotics.com/ridgeback/
+This package supplies Sphinx-based tutorial content to assist you with setting up and operating your Ridgeback_ mobile robot. The tutorials topics are listed in the left column, and presented in the suggested reading order.
+
+.. _Ridgeback: https://clearpathrobotics.com/ridgeback-indoor-robot-platform/
 
 .. Warning::
   These tutorials assume that you are comfortable working with ROS.  We recommend starting with our
   `ROS tutorial <./../ros>`_ if you are not familiar with ROS already.
 
-:doc:`Simulation <simulation>` is a logical place for most users to start, as this is universally applicable;
-understanding how to effectively operate Ridgeback in simulation is valuable whether you are in the testing
-phase with software you intend to ultimately deploy on a real Ridgeback, or you do not have one and are
-simply exploring the platform's capabilities.
+:doc:`Simulation <RidgebackSimulation>` is a logical place for most users to start, as this is universally applicable; understanding how to effectively operate Ridgeback in simulation is valuable whether you are in the testing phase with software you intend to ultimately deploy on a real Ridgeback, or you do not have one and are simply exploring the platform's capabilities.
 
-:doc:`Navigation <navigation>` is a follow-on to what is learned in the simulation tutorial, as navigation and
-map-making may be run in the simulated environment. However, this content is applicable to both the simulator
-and the real platform, if equipped with a laser scanner.
+:doc:`Driving <RidgebackDriving>` covers how to teleoperate Ridgeback using the remote control, a well as safety procedures for operating the real robot. Anyone working with a physical robot should be familiar with this section.
 
-The remainder of the subjects are more applicable to the real robot, and have to do with configuring, using,
-and maintaining the platform. If you are a lab administrator rather than direct platform user, you may wish to
-skip the introductory chapters and jump straight to these ones.
+:doc:`Navigation <RidgebackNavigation>` is a follow-on to what is learned in the simulation tutorial, as navigation and map-making may be run in the simulated environment. However, this content is applicable to both the simulator and the real platform, if equipped with a laser scanner.
 
-.. image:: images/ridgeback_banner.png
-    :alt: Ridgeback Robot
+The remainder of the subjects are more applicable to the real robot, and have to do with configuring, using, and maintaining the platform. If you are a lab administrator rather than direct platform user, you may wish to skip the introductory chapters and jump straight to these ones.
+
+.. toctree::
+    :maxdepth: 0
+    :caption: Ridgeback Overview
+
+    Introduction <self>
+    StatusIndicators
+
+.. toctree::
+    :maxdepth: 0
+    :caption: Ridgeback ROS Packages
+
+    CommonPackages
+    DescriptionPackage
+
+.. toctree::
+    :maxdepth: 0
+    :caption: Setting Up Ridgeback
+
+    Installing
+    Networking
+    PairingController
+
+.. toctree::
+    :maxdepth: 0
+    :caption: Using Ridgeback
+
+    Driving
+    Simulating
+    Navigating
+    ExtendingStartup
+    KeepingUpdated
+
+.. toctree::
+    :maxdepth: 0
+    :caption: Hardware Customization
+
+    CustomComputer
+    Payloads
+    Manipulation
+
+.. toctree::
+    :maxdepth: 0
+    :caption: PLATFORM On Windows
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 0
+    :caption: NVIDIA Jetson
+
+    JetsonNano
+    JetsonXavier
 
 .. toctree::
     :titlesonly:
     :hidden:
+    :caption: Other
 
-    Overview <self>
-    simulation
-    navigation
-    network
-    startup
-    calibration
-    update
-    package
-    additional_sim_worlds
+    AdditionalSimulation

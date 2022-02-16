@@ -1,10 +1,7 @@
 Simulating Ridgeback
 ====================
 
-Whether you actually have a Ridgeback robot or not, the Ridgeback simulator is a great way to get started with ROS
-robot development. In this tutorial, we will go through the basics of starting Gazebo and Rviz and how to drive
-your Ridgeback around.
-
+Whether you actually have a Ridgeback robot or not, the Ridgeback simulator is a great way to get started with ROS robot development. In this tutorial, we will go through the basics of starting Gazebo and rviz and how to drive your Ridgeback around.
 
 Installation
 ------------
