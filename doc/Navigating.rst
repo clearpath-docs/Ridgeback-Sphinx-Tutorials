@@ -7,7 +7,7 @@ Below are the example launch files for three different configurations for naviga
 - Generating a map using :roswiki:`gmapping`.
 - Localization with a known map using :roswiki:`amcl`.
 
-If you're using :doc:`simulation <RidgebackSimulation>`, bring up Ridgeback with the front laser enabled for the
+If you're using :doc:`simulation <Simulating>`, bring up Ridgeback with the front laser enabled for the
 following demos:
 
 .. code-block:: bash

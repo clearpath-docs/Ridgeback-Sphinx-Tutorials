@@ -137,4 +137,4 @@ Click OK, and you should see laser scan points now visible in the rviz window, r
 
 If you use the interactive markers to drive around, you'll notice that the laser scan points move a little bit
 but generally stay where they are. This is the first step toward map making using :roswiki:`gmapping`, which
-is covered in the next tutorial, :doc:`navigation`.
+is covered in the next tutorial, :doc:`Navigating`.

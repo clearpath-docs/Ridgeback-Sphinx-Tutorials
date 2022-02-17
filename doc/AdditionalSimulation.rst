@@ -80,7 +80,7 @@ To launch Office World with a Ridgeback, run the following command:
 
 To customize Ridgeback's payload, for example to add additional sensors, see :ref:`customizepayload`.
 
-Once the simulation is running you can use rviz and other tools as described in :doc:`simulation` and :doc:`navigation`
+Once the simulation is running you can use rviz and other tools as described in :doc:`Simulating` and :doc:`Navigating`
 to control and monitor the robot. For example, below we can see the ``gmapping_demo`` from ``ridgeback_navigation`` being
 used to build a map of the office world:
 
@@ -110,7 +110,7 @@ To launch Construction World with a Ridgeback, run the following command:
 
 To customize Ridgeback's payload, for example to add additional sensors, see :ref:`customizepayload`.
 
-Once the simulation is running you can use rviz and other tools as described in :doc:`simulation` and :doc:`navigation`
+Once the simulation is running you can use rviz and other tools as described in :doc:`Simulating` and :doc:`Navigating`
 to control and monitor the robot.
 
 You can see the complete layout of the office below:
