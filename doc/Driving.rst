@@ -5,7 +5,7 @@ There are four ways to drive Ridgeback, and each way will work on a physical Rid
 
 The first two ways are teleoperation using a remote controller, and manually through publishing ROS messages. These two ways are covered in this section.
 
-The third way is using the interactive controller in ``rviz``. This is covered in the :doc:`Simulation <Simulating>` section.
+The third way is using the interactive controller in rviz. This is covered in the :doc:`Simulation <Simulating>` section.
 
 The fourth way is through autonomous navigation. This is covered in the :doc:`Navigation <Navigating>` section.
 

@@ -72,7 +72,7 @@ controller and copy it. In the bluetooth control application, run:
 
 The controller should now be paired.
 
-6. Once the controller is paired, you should see the file ``/dev/input/ps4`` appear in Ridgeback's terminal by running:
+Once the PS4 controller is paired, you should see the file ``/dev/input/ps4`` appear in Ridgeback's terminal by running:
 
 .. code-block:: bash
 
