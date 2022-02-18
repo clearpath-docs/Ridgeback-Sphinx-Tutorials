@@ -6,6 +6,7 @@ The ``ridgeback_description`` package provides a `URDF <http://wiki.ros.org/urdf
 Ridgeback's URDF model can be visualized in rviz. In terminal, run:
 
 .. code-block:: bash
+
     roslaunch ridgeback_viz view_model.launch
 
 .. image:: images/ridgeback_urdf.png

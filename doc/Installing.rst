@@ -48,14 +48,14 @@ On the physical Ridgeback robot's computer:
 
 6. Once the computer turns off, remove the USB drive and turn on the computer. It will now be running your fresh installation of Ubuntu 20.04 (Focal) with ROS Noetic, as well as your Ridgeback-specific packages.
 
-7. The Ridgeback bringup service must be configured. In terminal, run:
+7. Install Ridgeback's ``robot_upstart`` job and configure the Ridgeback bringup service, so that ROS will launch each time the robot starts. In terminal, run:
 
 .. code-block:: bash
 
   rosrun ridgeback_bringup install
   sudo systemctl daemon-reload
 
-8. Finally, start ROS. In terminal, run:
+8. Finally, start ROS for the first time. In terminal, run:
 
 .. code-block:: bash
   
@@ -99,14 +99,14 @@ After the Ridgeback's computer is configured to use Clearpath's debian package r
 
     sudo apt-get install ros-noetic-ridgeback-robot
 
-2. The Ridgeback bringup service must be configured. In terminal, run
+2. Install Ridgeback's ``robot_upstart`` job and configure the Ridgeback bringup service, so that ROS will launch each time the robot starts. In terminal, run:
 
 .. code-block:: bash
 
   rosrun ridgeback_bringup install
   sudo systemctl daemon-reload
 
-3. Finally, start ROS. In terminal, run:
+3. Finally, start ROS for the first time. In terminal, run:
 
 .. code-block:: bash
   

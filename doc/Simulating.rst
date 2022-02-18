@@ -20,7 +20,7 @@ approximations of its dynamics, including wheel slippage, skidding, and inertia.
 
     roslaunch ridgeback_gazebo ridgeback_world.launch
 
-You should see the following window appear, or something like it. You can adjust the camera angle by clicking and dragging while holding CTRL, ALT, or the shift key:
+You should see the following window appear, or something like it. You will see a base Ridgeback spawned with a Hokuyo UST-10LX laser. You can adjust the camera angle by clicking and dragging while holding CTRL, ALT, or the shift key:
 
 .. image:: images/ridgeback_gazebo.png
     :alt: Simulated Ridgeback in the Race World.
@@ -74,7 +74,7 @@ Drag the red arrows in rviz to move in the linear x direction, and the blue circ
 Visualizing Sensors
 -------------------
 
-The rviz tool is capable of visualizing many common robotic sensors, as well as other data feeds which can give us clues as to what the robot is doing and why. A great place to start with this is adding the :roswiki:`LaserScan <rviz/DisplayTypes/LaserScan>` plugin to visualize the laser scans being produced by the simulated LMS111. In the left panel, click the "Add" button, then select the "Topics" tab, and then select the ``front/scan`` topic:
+The rviz tool is capable of visualizing many common robotic sensors, as well as other data feeds which can give us clues as to what the robot is doing and why. A great place to start with this is adding the :roswiki:`LaserScan <rviz/DisplayTypes/LaserScan>` plugin to visualize the laser scans being produced by the simulated UST-10LX or LMS111. In the left panel, click the "Add" button, then select the "Topics" tab, and then select the ``front/scan`` topic:
 
 .. image:: images/ridgeback_rviz_add_laser.png
     :alt: Adding a laser scan visualization to Ridgeback.
