@@ -1,18 +1,14 @@
 Keeping Ridgeback Updated
-=========================
+==========================
 
-.. note:: If you are upgrading your Ridgeback from an older version of ROS, please refer to `our upgrade instructions here <https://clearpathrobotics.com/assets/guides/kinetic/kinetic-to-melodic/index.html>`_.
+.. note:: If you are upgrading your Ridgeback from an older version of ROS, please refer to `our upgrade instructions here <https://clearpathrobotics.com/assets/guides/noetic/melodic-to-noetic/index.html>`_.
 
-Ridgeback is always being improved, both its own software and the many community ROS packages upon which it
-depends! You can use the apt package management system to receive new versions all software running on the
-platform.
-
+Ridgeback is always being improved, both its own software and the many community ROS packages upon which it depends! You can use the apt package management system to receive new versions all software running on the Ridgeback.
 
 Getting New Packages
 --------------------
 
-Each Ridgeback leaves the factory already configured to pull packages from http://packages.ros.org as well as
-http://packages.clearpathrobotics.com. To update your package and download new package versions, simply run:
+Each Ridgeback leaves the factory already configured to pull packages from http://packages.ros.org as well as http://packages.clearpathrobotics.com. To update your package and download new package versions make sure that Ridgeback is connected to the internet and run the following commands:
 
 .. code-block:: bash
 
@@ -22,7 +18,6 @@ http://packages.clearpathrobotics.com. To update your package and download new p
 If you see any errors, please `get in touch`_ and we'll see if we can get you sorted out.
 
 .. _get in touch: https://support.clearpathrobotics.com/hc/en-us/requests/new
-
 
 MCU Firmware Update
 -------------------
@@ -82,66 +77,3 @@ After resetting the MCU back in ``NORM`` mode, ensure the MCU is using the new v
     rostopic echo /status
 
 and verifying that the MCU firmware version is correct.
-
-
-.. _scratch:
-
-Starting From Scratch
----------------------
-
-If Ridgeback's computer has become inoperable, or for any reason you want to restore it to the factory state, begin
-by opening Ridgeback, lowering the computer tray, and connecting a screen and keyboard, as well as a wired internet
-connection. You can then download the most recent version of the Ridgeback boot ISO from the following location:
-
-https://packages.clearpathrobotics.com/stable/images/latest/
-
-Use unetbootin or a similar tool to flash the ISO image to a USB memory stick. Boot Ridgeback's computer with the USB
-memory connected, and you should be in the purple Debian/Ubuntu installer. The installer runs by itself and shuts
-down the computer when finished.
-
-Once done, turn Ridgeback on once more, and run the following:
-
-.. code-block:: bash
-
-    rosrun ridgeback_bringup install
-
-This installs Ridgeback's `robot_upstart`_ job, so that ROS starts each time the robot starts.
-
-.. _robot_upstart: http://wiki.ros.org/robot_upstart
-
-Note that if you may need to re-pair your gamepad to the robot, and you'll have some extra work to do if you have
-integrated accessories which require additional launchers or URDF.
-
-
-Bluetooth Controller Pairing
-----------------------------
-
-
-**PS3 Controller Pairing**
-
-If your Sixaxis controller runs out of batteries, or you purchase a new one, you might want to re-pair your platform
-and controller. To do this, lower the computer tray and plug the controller into an available USB port using a
-standard Mini-B USB cable. Then, from the prompt, run:
-
-.. code-block:: bash
-
-    sudo sixpair
-
-You should see a notice that the MAC address of Ridgeback's bluetooth adapter has been written into the controller. Now
-disconnect the USB cable and you should be able to press the pair button and achieve a pairing. Note that this first
-pairing *may* cause the joystick to come up as ``/dev/input/js1`` rather than ``/dev/input/js0``. If Ridgeback does not
-respond to your commands, power-cycle the full system and you should be set.
-
-
-**PS4 Controller Pairing**
-
-1. The first step is to check if Sixad is installed using: ``dpkg -l sixad`` which should return with to packages found.
-
-      - If you have sixad installed then it needs to be removed using ``sudo apt-get purge sixad``
-
-2. Charge the controller for a while, the controllers sometimes have issues pairing when the battery is low.
-3. Unpair the controller using ``sudo bluez-test-device remove XX:XX:XX:XX:XX:XX`` (You can get this by putting the controller into to pairing mode and running hcitool scan).
-4. Check to make sure Bluetooth is enabled by running ``sudo service bluetooth status``.
-5. If bluetooth is not enabled start the Bluetooth daemon with ``sudo service bluetooth start`` and make sure the bluetoothd is executable with ``ls -la /usr/sbin/bluetoothd``. If not make it executable using ``sudo chmod +x /usr/sbin/bluetoothd`` but this a temporary solution, you should update your packages to fix this.
-6. Power cycle the controller before trying to pair it.
-7. Finally, press the PS and share button simultaneously so the controller Bluetooth is enabled for pairing and use ``sudo ds4drv-pair``.

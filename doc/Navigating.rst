@@ -31,7 +31,7 @@ To get all Navigation related files for Ridgeback, run:
 
 .. code-block:: bash
 
-    sudo apt-get install ros-melodic-ridgeback-navigation
+    sudo apt-get install ros-noetic-ridgeback-navigation
 
 To launch the navigation demo, run:
 
