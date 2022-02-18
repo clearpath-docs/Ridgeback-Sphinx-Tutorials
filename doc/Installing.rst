@@ -1,116 +1,126 @@
-Installing Software
-====================
+Installing Ridgeback Software
+=============================
 
 .. note::
 
-  To get started with the Warthog, make sure you have a :roswiki:`working ROS installation <ROS/Installation>`
-  set up on your computer.  The physical Warthog robot comes ROS pre-configured, but if you are working
-  on your own computer you may need to follow the instructions on the ROS wiki to get set up.
+  The physical Ridgeback robot comes pre-configured with ROS and the necessary Ridgeback packages already installed; therefore, you will only need to follow the instructions below if you are re-installing software on the Ridgeback.
 
-Add Clearpath Debian Package Repository
-------------------------------------------
+There are three ways to install Ridgeback software on the physical Ridgeback robot.
 
-Before you can install the Warthog packages, you need to configure Ubuntu's APT package manager to
-add Clearpath's package server.  You can do this by running the following commands in the terminal:
+The first two ways are using the Clearpath Robotics ISO image, and using Debian (``.deb``) packages. These two ways are covered in this section.
 
-1. First install the authentication key for the packages.clearpathrobotics.com repository:
+The third way is installing from source by directly cloning Clearpath Robotics Github repositories and building them in your ROS (``catkin``) workspace; however, this way is not recommended and will not be covered in this section.
+
+Installing with ISO Image
+--------------------------
+
+.. Warning::
+
+  Installing with the Clearpath Robotics ISO image will completely wipe data on the Ridgeback's computer, since the ISO image will install Ubuntu 20.04 (Focal), ROS Noetic, and Ridgeback-specific packages.
+
+If you are installing Ridgeback software on a physical Ridgeback robot through the Clearpath Robotics ISO image, you will first need a USB drive of at least 2GB to create the installation media, an ethernet cable, a monitor, and a keyboard.
+
+You can download the Ubuntu 20.04 (Focal) ROS Noetic ISO image from `here <https://packages.clearpathrobotics.com/stable/images/latest/noetic-focal/>`_.
+
+On a separate computer:
+
+1. Download the ``.iso`` file from the link above.
+
+2. Insert the USB drive.
+
+3. Write the downloaded ``.iso`` file to the USB drive using a software such as ``Rufus``, ``Etcher``, or ``UNetbootin``. This will erase all data already on the USB drive, so make sure you have backed up anything important!
+
+On the physical Ridgeback robot's computer:
+
+1. Ensure that it is turned off.
+
+2. Connect it to the internet via the ethernet cable.
+
+3. Insert the newly formatted USB drive.
+
+4. Turn it on and choose to begin the installation process. The installer should run automatically. 
+
+.. note::
+
+  You may need to configure the computer's BIOS to prioritize booting from the USB drive. On most common motherboards, pressing ``delete`` during the initial startup will open the BIOS for configuration.
+
+5. Step through any prompts that come up. Make sure you select the installation option corresponding to the Ridgeback, and give the Ridgeback an appropriate hostname. The computer will turn off automatically when the installation completes.
+
+6. Once the computer turns off, remove the USB drive and turn on the computer. It will now be running your fresh installation of Ubuntu 20.04 (Focal) with ROS Noetic, as well as your Ridgeback-specific packages.
+
+7. The Ridgeback bringup service must be configured. In terminal, run:
+
+.. code-block:: bash
+
+  rosrun ridgeback_bringup install
+  sudo systemctl daemon-reload
+
+8. Finally, start ROS. In terminal, run:
+
+.. code-block:: bash
+  
+  sudo systemctl start ros
+
+Installing with Debian Packages
+--------------------------------
+
+If you are installing Ridgeback software on a physical Ridgeback robot through Debian packages, you will first need to ensure that the Ridgeback robot's computer is running Ubuntu 20.04 (Focal) and ROS Noetic.
+
+**Add Clearpath Debian Package Repository**
+
+Before you can install the Ridgeback packages, you need to configure Ubuntu's APT package manager to
+add Clearpath's package server:
+
+1. Install the authentication key for the packages.clearpathrobotics.com repository. In terminal, run:
 
 .. code-block:: bash
 
     wget https://packages.clearpathrobotics.com/public.key -O - | sudo apt-key add -
 
-2. Add the debian sources for the repository:
+2. Add the debian sources for the repository. In terminal, run:
 
 .. code-block:: bash
 
     sudo sh -c 'echo "deb https://packages.clearpathrobotics.com/stable/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/clearpath-latest.list'
 
-3. Update your computer's package cache:
+3. Update your computer's package cache. In terminal, run:
 
 .. code-block:: bash
 
     sudo apt-get update
 
+**Installing Debian Packages**
 
-Installing the Packages
---------------------------
+After the Ridgeback's computer is configured to use Clearpath's debian package repository, you can install the Ridgeback packages. 
 
-Now that your computer is configured to use Clearpath's deb repository, you can install the Warthog packages needed
-for this tutorial by running the following command:
+1. On a physical Ridgeback robot, you should only need the Ridgeback robot packages. In terminal, run:
 
 .. code-block :: bash
 
-    sudo apt-get install ros-noetic-warthog-desktop
+    sudo apt-get install ros-noetic-ridgeback-robot
 
-
-Installing from Source
----------------------------
-
-The source code for the base Warthog packages is available on GitHub_.  We recommend installing the software through
-**apt**, as described above.  But if you want to modify Warthog's behaviour, or simply learn more about how the robot
-is configured, you can check out and build the packages yourself.  These instructions assume you are at least somewhat
-familiar with building ROS packages using the :roswiki:`Catkin build system <catkin/conceptual_overview>`.
-
-.. _GitHub: https://github.com/warthog-cpr/
-
-First create a workspace directory and initialize it:
+2. The Ridgeback bringup service must be configured. In terminal, run
 
 .. code-block:: bash
 
-    mkdir ~/warthog_ws
-    cd ~/warthog_ws
-    mkdir src
-    catkin_init_workspace src
+  rosrun ridgeback_bringup install
+  sudo systemctl daemon-reload
 
-Next clone the Warthog repositories using git:
+3. Finally, start ROS. In terminal, run:
 
 .. code-block:: bash
+  
+  sudo systemctl start ros
 
-    cd ~/warthog_ws/src
-    git clone https://github.com/warthog-cpr/warthog.git
-    git clone https://github.com/warthog-cpr/warthog_simulator.git
-    git clone https://github.com/warthog-cpr/warthog_desktop.git
+Installing Desktop Software
+----------------------------
 
-Note that there are three separate git repositories being cloned:
+It is useful to install Ridgeback's software on your computer for the purpose of interfacing with the physical Ridgeback robot and/or to run simulations of Ridgeback.
 
-+------------------------+------------------------+---------------------------------------------------------------------+
-| Git repository         | ROS Packages           | Description                                                         |
-+========================+========================+=====================================================================+
-| ``warthog``            | * warthog_control      | Common packages for the Warthog platform, including messages and    |
-|                        | * warthog_description  | robot description.  These packages are relevant to all workspaces,  |
-|                        | * warthog_msgs         | including simulation, desktop, or use on the robot itself.          |
-+------------------------+------------------------+---------------------------------------------------------------------+
-| ``warthog_simulator``  | * warthog_gazebo       | Packages essential for running warthog simulations.  Requires the   |
-|                        | * warthog_simulator    | packages from the ``warthog`` repository.                           |
-+------------------------+------------------------+---------------------------------------------------------------------+
-| ``warthog_desktop``    | * warthog_desktop      | Packages for controlling & monitoring the physical robot and/or     |
-|                        | * warthog_viz          | simulation.  Requires the packages from the ``warthog`` repository  |
-+------------------------+------------------------+---------------------------------------------------------------------+
+If you are installing Ridgeback's software on your computer, you will first need to ensure that your computer is running Ubuntu 20.04 (Focal) and ROS Noetic.
 
-Now install additional ROS dependencies:
+1. On your computer, you should only need the Ridgeback desktop packages. In terminal, run:
 
-.. code-block:: bash
+.. code-block :: bash
 
-    cd ~/warthog_ws
-    rosdep install --from-paths src --ignore-src --rosdistro=kinetic -y
-
-Finally build the workspace:
-
-.. code-block:: bash
-
-    cd ~/warthog_ws
-    catkin_make
-
-You can now source your workspace's in order to make use of the packages you just built:
-
-.. code-block:: bash
-
-    cd ~/warthog_ws
-    source devel/setup.bash
-
-To test that everything worked, try running the Warthog simulation that we'll be using in the next portion of this
-tutorial:
-
-.. code-block:: bash
-
-    roslaunch warthog_gazebo warthog_world.launch
+  sudo apt-get install ros-noetic-ridgeback-desktop ros-noetic-ridgeback-simulator
