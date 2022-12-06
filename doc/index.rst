@@ -1,6 +1,10 @@
 Ridgeback Tutorials
 ===================
 
+.. Warning::
+
+  These tutorials have been superceded. Find the latest Ridgeback tutorials at `docs.clearpathrobotics.com <https://docs.clearpathrobotics.com/docs/robots/ridgeback/tutorials_ridgeback>`_.
+
 .. image:: images/ridgeback_banner.png
     :alt: Ridgeback Robot
 

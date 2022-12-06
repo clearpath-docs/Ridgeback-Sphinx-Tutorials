@@ -1,5 +1,12 @@
 # Tutorial for Ridgeback
 
+---
+
+**Note:**
+These tutorials have been superceded. Find the latest Ridgeback tutorials at [docs.clearpathrobotics.com](https://docs.clearpathrobotics.com/docs/robots/ridgeback/tutorials_ridgeback).
+
+---
+
 ## Setup
     sudo apt-get install texlive-full texlive-xetex texmaker python-pip latexmk
     pip3 install sphinx
